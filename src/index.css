@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors - derived from NYS logo (blue + yellow) */
+  --color-primary-50: #eff4ff;
+  --color-primary-100: #dbe6fe;
+  --color-primary-200: #bfd3fe;
+  --color-primary-300: #93b4fd;
+  --color-primary-400: #6090fa;
+  --color-primary-500: #3b6cf6;
+  --color-primary-600: #1a4fdb;
+  --color-primary-700: #1a3fc8;
+  --color-primary-800: #1c35a3;
+  --color-primary-900: #1c3180;
+  --color-primary-950: #16204e;
+
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-200: #fef08a;
+  --color-accent-300: #fde047;
+  --color-accent-400: #facc15;
+  --color-accent-500: #eab308;
+  --color-accent-600: #ca8a04;
+  --color-accent-700: #a16207;
+  --color-accent-800: #854d0e;
+  --color-accent-900: #713f12;
+
+  --color-surface-50: #f8fafc;
+  --color-surface-100: #f1f5f9;
+  --color-surface-200: #e2e8f0;
+  --color-surface-300: #cbd5e1;
+  --color-surface-400: #94a3b8;
+  --color-surface-500: #64748b;
+  --color-surface-600: #475569;
+  --color-surface-700: #334155;
+  --color-surface-800: #1e293b;
+  --color-surface-900: #0f172a;
+  --color-surface-950: #020617;
+
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+
+  /* Font families */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Animation */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-slide-in-right: slide-in-right 0.3s ease-out;
+  --animate-scale-in: scale-in 0.3s ease-out;
+  --animate-pulse-slow: pulse 3s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-950);
+  color: var(--color-surface-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-600);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-500);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary-600);
+  color: white;
+}
